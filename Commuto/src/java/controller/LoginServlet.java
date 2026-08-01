@@ -2,6 +2,7 @@ package controller;
 
 import dao.UserDAO;
 import java.io.IOException;
+import java.util.UUID;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,9 +22,6 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
 
-        System.out.println("Email = " + email);
-        System.out.println("Password = " + password);
-
         if (email == null || password == null ||
                 email.trim().equals("") || password.trim().equals("")) {
 
@@ -38,6 +36,7 @@ public class LoginServlet extends HttpServlet {
 
             HttpSession session = request.getSession();
             session.setAttribute("currentUser", user);
+            session.setAttribute("csrfToken", UUID.randomUUID().toString());
 
             if ("DRIVER".equals(user.getRole())) {
                 response.sendRedirect("driverDashboard.jsp");

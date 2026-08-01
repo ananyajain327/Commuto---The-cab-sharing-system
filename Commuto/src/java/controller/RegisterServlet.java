@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.User;
+import util.PasswordUtil;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -26,12 +27,6 @@ public class RegisterServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String role = request.getParameter("role");
 
-        System.out.println(fullName);
-        System.out.println(email);
-        System.out.println(password);
-        System.out.println(phone);
-        System.out.println(role);
-
         if (fullName == null || email == null
                 || password == null || phone == null
                 || role == null) {
@@ -44,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
 
         user.setFullName(fullName.trim());
         user.setEmail(email.trim());
-        user.setPassword(password.trim());
+        user.setPassword(PasswordUtil.hash(password.trim()));
         user.setPhone(phone.trim());
         user.setRole(role.trim());
 

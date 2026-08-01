@@ -113,6 +113,10 @@
 
             <form action="AcceptRideServlet" method="post" class="action-form">
                 <input type="hidden"
+                       name="csrfToken"
+                       value="<%= session.getAttribute("csrfToken") %>">
+
+                <input type="hidden"
                        name="bookingId"
                        value="<%= rs.getInt("booking_id") %>">
 
@@ -122,6 +126,10 @@
             </form>
 
             <form action="RejectRideServlet" method="post" class="action-form">
+                <input type="hidden"
+                       name="csrfToken"
+                       value="<%= session.getAttribute("csrfToken") %>">
+
                 <input type="hidden"
                        name="bookingId"
                        value="<%= rs.getInt("booking_id") %>">

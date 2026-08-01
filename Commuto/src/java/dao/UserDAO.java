@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import model.User;
+import util.PasswordUtil;
 
 public class UserDAO {
 
@@ -56,16 +57,21 @@ public class UserDAO {
                 return null;
             }
 
-            String query = "SELECT * FROM users WHERE email=? AND password=?";
+            String query = "SELECT * FROM users WHERE email=?";
 
             PreparedStatement ps = con.prepareStatement(query);
 
             ps.setString(1, email);
-            ps.setString(2, password);
 
             ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
+                String storedHash = rs.getString("password");
+
+                if (!PasswordUtil.verify(password, storedHash)) {
+                    return null;
+                }
+
                 user = new User();
 
                 user.setUserId(rs.getInt("user_id"));

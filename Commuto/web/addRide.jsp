@@ -35,6 +35,10 @@
 
         <form action="<%=request.getContextPath()%>/AddRideServlet" method="post">
 
+            <input type="hidden"
+                   name="csrfToken"
+                   value="<%= session.getAttribute("csrfToken") %>">
+
             <input type="text"
                    id="source"
                    name="source"

@@ -189,6 +189,10 @@
                     <form action="BookRideServlet" method="post">
 
                         <input type="hidden"
+                               name="csrfToken"
+                               value="<%= session.getAttribute("csrfToken") %>">
+
+                        <input type="hidden"
                                name="rideId"
                                value="<%= ride.getRideId() %>">
 
@@ -223,6 +227,10 @@
             <br>
 
             <form action="RideRequestServlet" method="post">
+
+                <input type="hidden"
+                       name="csrfToken"
+                       value="<%= session.getAttribute("csrfToken") %>">
 
                 <input type="hidden" name="source" value="<%= source %>">
                 <input type="hidden" name="destination" value="<%= destination %>">

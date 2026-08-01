@@ -25,7 +25,7 @@ RUN mkdir -p web/WEB-INF/classes web/WEB-INF/lib \
 FROM tomcat:9
 
 RUN apt-get update \
- && apt-get install -y --no-install-recommends mariadb-server mariadb-client \
+ && apt-get install -y --no-install-recommends mariadb-server mariadb-client openssl \
  && rm -rf /var/lib/apt/lists/*
 
 COPY --from=build /app/commuto.war /usr/local/tomcat/webapps/ROOT.war
@@ -33,9 +33,11 @@ COPY database.sql /init.sql
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
-# App database configuration (override these in your platform env if needed)
+# App database configuration. DB_PASSWORD has no committed default:
+# it is auto-generated at container start unless DB_PASSWORD is set.
+# When overriding DB_NAME, also update DB_URL accordingly.
 ENV DB_USER=app \
-    DB_PASSWORD=app_pass_123 \
+    DB_NAME=commuto \
     DB_URL="jdbc:mysql://127.0.0.1:3306/commuto?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
 
 EXPOSE 8080
