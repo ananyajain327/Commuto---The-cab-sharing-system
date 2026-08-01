@@ -8,6 +8,13 @@
 [![Forks](https://img.shields.io/github/forks/ananyajain327/Commuto---The-cab-sharing-system?style=for-the-badge&logo=github&color=blue)](https://github.com/ananyajain327/Commuto---The-cab-sharing-system/forks)
 [![License](https://img.shields.io/github/license/ananyajain327/Commuto---The-cab-sharing-system?style=for-the-badge&color=green)](./LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/ananyajain327/Commuto---The-cab-sharing-system?style=for-the-badge&color=purple)](https://github.com/ananyajain327/Commuto---The-cab-sharing-system/commits/main)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-commuto.up.railway.app-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://commuto-live-production.up.railway.app)
+
+---
+
+## 🚀 Live Demo
+
+Try it live: **https://commuto-live-production.up.railway.app**
 
 ---
 
