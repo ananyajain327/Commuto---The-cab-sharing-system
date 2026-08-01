@@ -9,6 +9,7 @@
 [![License](https://img.shields.io/github/license/ananyajain327/Commuto---The-cab-sharing-system?style=for-the-badge&color=green)](./LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/ananyajain327/Commuto---The-cab-sharing-system?style=for-the-badge&color=purple)](https://github.com/ananyajain327/Commuto---The-cab-sharing-system/commits/main)
 [![Live Demo](https://img.shields.io/badge/Live_Demo-commuto.up.railway.app-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://commuto-live-production.up.railway.app)
+[![CI](https://github.com/ananyajain327/Commuto---The-cab-sharing-system/actions/workflows/ci.yml/badge.svg)](https://github.com/ananyajain327/Commuto---The-cab-sharing-system/actions/workflows/ci.yml)
 
 ---
 
@@ -32,6 +33,16 @@ Commuto is a web application that connects **drivers** and **passengers** on one
 - Book rides with fare splitting
 - Driver ride request approval (accept / reject)
 - Booking history & dashboards for both roles
+
+---
+
+## 🔒 Security
+
+- **Password hashing** — PBKDF2 (HMAC-SHA256, 120k iterations, per-user salt); passwords are never stored in plain text.
+- **No PII logging** — request parameters (email/password/phone) are never written to logs.
+- **Session protection** — a `SecurityFilter` guards every protected page and servlet; unauthenticated access is redirected to login.
+- **CSRF protection** — every state-changing POST requires a per-session CSRF token.
+- **Env-only credentials** — database credentials are injected via environment variables; no secrets are committed (the DB password is auto-generated at container start when not set).
 
 ---
 
