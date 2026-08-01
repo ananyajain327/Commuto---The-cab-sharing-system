@@ -21,7 +21,7 @@ public class SecurityFilter implements Filter {
     private static final Set<String> PUBLIC_PATHS = new HashSet<>(Arrays.asList(
             "/index.jsp", "/login.jsp", "/register.jsp",
             "/LoginServlet", "/RegisterServlet",
-            "/css/", "/js/", "/images/", "/WEB-INF/"
+            "/css/", "/js/", "/images/", "/assets/", "/WEB-INF/"
     ));
 
     private static final Set<String> CSRF_PROTECTED = new HashSet<>(Arrays.asList(
