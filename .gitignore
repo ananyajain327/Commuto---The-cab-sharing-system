@@ -44,6 +44,9 @@ desktop.ini
 # Database / env
 db.properties
 application.properties
+.env
+.env.*
+!.env.example
 *.sql.bak
 
 # JVM crash logs

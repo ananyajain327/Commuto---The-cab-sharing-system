@@ -55,7 +55,7 @@ Commuto is a web application that connects **drivers** and **passengers** on one
    cd Commuto---The-cab-sharing-system/Commuto
    ```
 2. Import the database by running [`database.sql`](./database.sql) in MySQL Workbench.
-3. Set your MySQL username/password in `src/java/dao/DBConnection.java` (or export `DB_USER` / `DB_PASSWORD` environment variables).
+3. Set your MySQL username/password via environment variables (`DB_USER`, `DB_PASSWORD`) — see [`.env.example`](./.env.example).
 4. Open the project in NetBeans, clean & build, then deploy to GlassFish and run.
 5. Visit `http://localhost:8080/Commuto/`
 
