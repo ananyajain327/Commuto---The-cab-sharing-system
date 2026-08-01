@@ -1,24 +1,51 @@
-# Compiled class file
+# Compiled class files
 *.class
 
-# Log file
+# Logs
 *.log
+logs/
+*.tmp
 
-# BlueJ files
-*.ctxt
+# NetBeans
+nbproject/private/
+nbproject/private.properties
+nbproject/private.xml
+nbproject/update-tracker.properties
+nbproject/update-tracker-resources.properties
+nbproject/BuildDir/
+nbproject/DistDir/
+build/
+dist/
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
+# WAR / JAR packages
 *.war
-*.nar
+*.jar
 *.ear
+*.nar
 *.zip
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# BlueJ / Eclipse / IntelliJ
+*.ctxt
+.mtj.tmp/
+.classpath
+.project
+.settings/
+*.iml
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Database / env
+db.properties
+application.properties
+*.sql.bak
+
+# JVM crash logs
 hs_err_pid*
 replay_pid*
