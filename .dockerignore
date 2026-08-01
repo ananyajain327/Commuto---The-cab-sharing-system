@@ -1,0 +1,13 @@
+.git
+.gitignore
+README.md
+LICENSE
+CONTRIBUTING.md
+.github
+build
+dist
+nbproject
+*.war
+*.jar
+.env
+.env.*
