@@ -1,7 +1,7 @@
-CREATE DATABASE commuto;
+CREATE DATABASE IF NOT EXISTS commuto;
 USE commuto;
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     user_id    INT AUTO_INCREMENT PRIMARY KEY,
     full_name  VARCHAR(100) NOT NULL,
     email      VARCHAR(100) NOT NULL UNIQUE,
@@ -10,7 +10,7 @@ CREATE TABLE users (
     role       VARCHAR(20) NOT NULL
 );
 
-CREATE TABLE rides (
+CREATE TABLE IF NOT EXISTS rides (
     ride_id         INT AUTO_INCREMENT PRIMARY KEY,
     driver_id       INT NOT NULL,
     source          VARCHAR(100) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE rides (
     FOREIGN KEY (driver_id) REFERENCES users(user_id)
 );
 
-CREATE TABLE bookings (
+CREATE TABLE IF NOT EXISTS bookings (
     booking_id     INT AUTO_INCREMENT PRIMARY KEY,
     ride_id        INT NOT NULL,
     passenger_id   INT NOT NULL,
