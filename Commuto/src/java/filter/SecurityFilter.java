@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class SecurityFilter implements Filter {
 
     private static final Set<String> PUBLIC_PATHS = new HashSet<>(Arrays.asList(
-            "/", "/index.jsp", "/login.jsp", "/register.jsp",
+            "/index.jsp", "/login.jsp", "/register.jsp",
             "/LoginServlet", "/RegisterServlet",
             "/css/", "/js/", "/images/", "/WEB-INF/"
     ));
@@ -69,6 +69,9 @@ public class SecurityFilter implements Filter {
     }
 
     private boolean isPublic(String path) {
+        if (path.isEmpty() || path.equals("/")) {
+            return true;
+        }
         for (String prefix : PUBLIC_PATHS) {
             if (path.startsWith(prefix)) {
                 return true;
